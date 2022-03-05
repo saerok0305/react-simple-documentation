@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-simple-documentation/static/css/main.073c9b0a.css",
-    "main.js": "/react-simple-documentation/static/js/main.46a2a74d.js",
+    "main.js": "/react-simple-documentation/static/js/main.496df9b1.js",
     "static/js/787.3084df76.chunk.js": "/react-simple-documentation/static/js/787.3084df76.chunk.js",
     "index.html": "/react-simple-documentation/index.html",
     "static/media/example1-1.mdx": "/react-simple-documentation/static/media/example1-1.fa9ec863c8f782ed713a.mdx",
@@ -12,11 +12,11 @@
     "static/media/header1.mdx": "/react-simple-documentation/static/media/header1.2c764a24c10667011300.mdx",
     "static/media/example2.mdx": "/react-simple-documentation/static/media/example2.a484ac8da392234aefbc.mdx",
     "main.073c9b0a.css.map": "/react-simple-documentation/static/css/main.073c9b0a.css.map",
-    "main.46a2a74d.js.map": "/react-simple-documentation/static/js/main.46a2a74d.js.map",
+    "main.496df9b1.js.map": "/react-simple-documentation/static/js/main.496df9b1.js.map",
     "787.3084df76.chunk.js.map": "/react-simple-documentation/static/js/787.3084df76.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.46a2a74d.js"
+    "static/js/main.496df9b1.js"
   ]
 }
