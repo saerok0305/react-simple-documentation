@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import styled, { createGlobalStyle } from "styled-components";
+import MainApp from "./components/MainApp";
+import { Desktop, Mobile, Tablet } from "./components/common/Responsive";
+import { useState } from "react";
 
+const GlobalStyle = createGlobalStyle`
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+    /* background: #e9ecef; */
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+  }
+  
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+`;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <GlobalStyle />
+      <Desktop>
+        <MainApp collapsedDefault={false} />
+      </Desktop>
+      <Tablet>
+        <MainApp collapsedDefault={false} />
+      </Tablet>
+      <Mobile>
+        <MainApp collapsedDefault={true} />
+      </Mobile>
+    </Container>
   );
 }
 
