@@ -29,10 +29,10 @@ const MyLink = styled(NavLink)`
     color: grey;
   } */
 
-  &:focus,
+  /* &:focus, */
   /* &:visited, */
   /* &:link, */
-  &:active {
+  &:focus {
     text-decoration: none;
     color: ${defaultStyle.color4};
     /* font-weight: bolder; */
@@ -41,6 +41,8 @@ const MyLink = styled(NavLink)`
     color: grey;
     transition-duration: 0.3s;
   } */
+
+  -webkit-tap-highlight-color: transparent;
 `;
 
 function StyledLink({ children, to }) {

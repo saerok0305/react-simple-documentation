@@ -10,29 +10,25 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-
-  /* width: 200px; /////////////////////////////////////// */
   height: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
 
-  transition: all 0.2s ease-out;
   ${(props) =>
     !props.collapsed &&
     css`
       width: 240px; ///////////////////////////////////////
       height: 100%;
       border-right: 1px solid ${defaultStyle.color0};
-      /* background: grey; */
     `}
 
   ${(props) =>
     props.collapsed &&
     css`
       width: 0px;
-      /* display: none; */
     `}
+
+    transition: width 0.2s ease-out;
 `;
 
 const ItemContainer = styled.div`
@@ -44,13 +40,10 @@ const ItemContainer = styled.div`
 
 const SideBarItem = styled.div`
   display: flex;
-  /* justify-content: center; //////////////////////////////////////////// */
   align-items: center;
   margin: 4px;
   height: 40px; ///////////////
   width: 100%;
-
-  /* transition: opacity 0.2s ease 0s, transform 0.2s ease 0s; */
 
   cursor: pointer;
 
@@ -59,6 +52,7 @@ const SideBarItem = styled.div`
   }
 
   border-radius: 12px;
+  user-select: none;
 `;
 
 const SideBarSubItem = styled.div`
@@ -76,6 +70,8 @@ const SideBarSubItem = styled.div`
 
   border-radius: 12px;
   padding-left: 20px;
+
+  user-select: none;
 `;
 
 const ExtendButton = styled.div`
@@ -94,6 +90,7 @@ const ExtendButton = styled.div`
     `}
 
   transition: transform 0.250s ease-in;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 function SideBar({ collapsed }) {

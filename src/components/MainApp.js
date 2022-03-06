@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
 import styled from "styled-components";
 import defaultStyle from "../style";
 import Content from "./content/Content";
@@ -17,8 +16,6 @@ const Container = styled.div`
 
 const HeaderContainer = styled.div`
   display: flex;
-  /* justify-content: center; */
-  /* justify-content: stretch; */
   align-items: center;
   width: 100%;
   height: 50px;
@@ -40,7 +37,7 @@ function MainApp({ collapsedDefault }) {
   return (
     <Container>
       <HeaderContainer>
-        <Header onClickMenu={onClickMenu} />
+        <Header collapsed={collapsed} onClickMenu={onClickMenu} />
       </HeaderContainer>
       <ContentContainer>
         <SideBar collapsed={collapsed} />

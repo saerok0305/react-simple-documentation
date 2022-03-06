@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import defaultStyle from "../../style";
 import StyledLink from "../common/StyledLink";
@@ -16,6 +16,13 @@ const Left = styled.div`
   align-items: center;
   width: 240px;
   height: 100%;
+  ${(props) =>
+    props.collapsed &&
+    css`
+      width: 60px;
+    `}
+
+  transition: width 0.2s ease-out;
 `;
 
 const Right = styled.div`
@@ -32,8 +39,6 @@ const MenuItem = styled.div`
   padding: 10px;
   height: 100%;
 
-  /* transition: opacity 0.2s ease 0s, transform 0.2s ease 0s; */
-
   cursor: pointer;
 
   &:hover {
@@ -41,6 +46,14 @@ const MenuItem = styled.div`
   }
 
   border-radius: 12px;
+
+  ${(props) =>
+    !props.collapsed &&
+    css`
+      color: ${defaultStyle.color4};
+    `}
+
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const HeaderItem = styled.div`
@@ -57,14 +70,16 @@ const HeaderItem = styled.div`
   }
 
   border-radius: 12px;
+
+  user-select: none;
 `;
 
-function Header({ onClickMenu }) {
+function Header({ collapsed, onClickMenu }) {
   console.log(mappings);
   return (
     <Container>
-      <Left>
-        <MenuItem onClick={onClickMenu}>
+      <Left collapsed={collapsed}>
+        <MenuItem collapsed={collapsed} onClick={onClickMenu}>
           <AiOutlineMenu />
         </MenuItem>
       </Left>

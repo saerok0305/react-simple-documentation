@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;

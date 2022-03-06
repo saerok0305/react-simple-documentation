@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Home from "./Home";
 import NotFound from "../NotFound";
 import mappings from "../../page/mappings.json";
-import { getContents } from "../../utils/MarkDownUtil";
 import MarkDown from "./../common/MarkDown";
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   width: calc(100% - 240px);
-  /* align-items: center; */
 `;
 
-function Content({ style }) {
-  const [markdown, setMarkdown] = useState("");
-
+function Content() {
   return (
     <Container>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/home" element={<Home />} /> */}
-        <Route path="/docs" element={<Home />} />
+        <Route path="/react-simple-documentation" element={<Home />} />
         {mappings.map((headerItem, index) => (
           <Route
             key={index}
