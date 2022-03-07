@@ -20,12 +20,15 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.div`
   position: fixed;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  height: -webkit-fill-available;
 `;
 function App() {
   return (

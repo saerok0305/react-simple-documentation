@@ -14,21 +14,15 @@ const Container = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
 
+  width: 0px;
+  height: 100%;
   ${(props) =>
     !props.collapsed &&
     css`
       width: 240px; ///////////////////////////////////////
-      height: 100%;
       border-right: 1px solid ${defaultStyle.color0};
     `}
-
-  ${(props) =>
-    props.collapsed &&
-    css`
-      width: 0px;
-    `}
-
-    transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
 `;
 
 const ItemContainer = styled.div`

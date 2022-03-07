@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  width: 100%;
 `;
 
 const Left = styled.div`
@@ -28,6 +29,7 @@ const Left = styled.div`
 const Right = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
   height: 100%;
 `;
 

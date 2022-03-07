@@ -4,16 +4,18 @@ import Home from "./Home";
 import NotFound from "../NotFound";
 import mappings from "../../page/mappings.json";
 import MarkDown from "./../common/MarkDown";
+import { css } from "styled-components";
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: calc(100% - 240px);
+
+  width: 100%;
 `;
 
-function Content() {
+function Content({ collapsed }) {
   return (
-    <Container>
+    <Container collapsed={collapsed}>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/home" element={<Home />} /> */}
@@ -22,7 +24,9 @@ function Content() {
           <Route
             key={index}
             path={headerItem.header.path + "/*"}
-            element={<MarkDown file={headerItem.header.mdx} />}
+            element={
+              <MarkDown file={headerItem.header.mdx} collapsed={collapsed} />
+            }
           />
         ))}
         {mappings.map((headerItem, index1) =>

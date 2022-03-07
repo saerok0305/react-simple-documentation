@@ -25,7 +25,7 @@ const HeaderContainer = styled.div`
 
 const ContentContainer = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: calc(100% - 50px);
 `;
 
@@ -41,7 +41,7 @@ function MainApp({ collapsedDefault }) {
       </HeaderContainer>
       <ContentContainer>
         <SideBar collapsed={collapsed} />
-        <Content />
+        <Content collapsed={collapsed} />
       </ContentContainer>
     </Container>
   );
