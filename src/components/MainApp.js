@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import defaultStyle from "../style";
-import Content from "./content/Content";
-import Header from "./content/Header";
-import SideBar from "./content/SideBar";
+import Content from "./contents/Content";
+import Header from "./contents/Header";
+import SideBar from "./contents/SideBar";
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +20,6 @@ const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 50px;
-  padding: 8px;
   border-bottom: 1px solid ${defaultStyle.color0};
 `;
 
@@ -29,19 +29,51 @@ const ContentContainer = styled.div`
   height: calc(100% - 50px);
 `;
 
-function MainApp({ collapsedDefault }) {
+function MainApp({ responsive, collapsedDefault }) {
   const [collapsed, setCollapsed] = useState(collapsedDefault);
+
+  const [extend, setExtend] = useState(false);
+
+  const [link, setLink] = useState("/");
+  const onClickLink = (link) => {
+    setCollapsed(false);
+    setLink(link);
+  };
+
   const onClickMenu = () => {
     setCollapsed(!collapsed);
+    setLink(link);
+  };
+
+  const onClickContent = () => {
+    if (responsive === "mobile") {
+      setCollapsed(true);
+    }
+    setExtend(false);
   };
   return (
     <Container>
       <HeaderContainer>
-        <Header collapsed={collapsed} onClickMenu={onClickMenu} />
+        <Header
+          responsive={responsive}
+          collapsed={collapsed}
+          setCollapsed={setCollapsed}
+          onClickMenu={onClickMenu}
+          link={link}
+          setLink={setLink}
+          onClickLink={onClickLink}
+          extend={extend}
+          setExtend={setExtend}
+        />
       </HeaderContainer>
       <ContentContainer>
-        <SideBar collapsed={collapsed} />
-        <Content collapsed={collapsed} />
+        <SideBar
+          responsive={responsive}
+          collapsed={collapsed}
+          link={link}
+          onClickLink={onClickLink}
+        />
+        <Content collapsed={collapsed} onClickContent={onClickContent} />
       </ContentContainer>
     </Container>
   );
