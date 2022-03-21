@@ -4,9 +4,7 @@ import defaultStyle from "../../style";
 import StyledLink from "../common/StyledLink";
 import mappings from "../../pages/mappings.json";
 import { AiOutlineMenu, AiOutlineEllipsis } from "react-icons/ai";
-import Infinite from "../../Infinite.png";
 import barcode from "../../barcode.png";
-import book from "../../book.png";
 import { NavLink } from "react-router-dom";
 
 function getTextWidth(text, font) {
