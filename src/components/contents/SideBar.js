@@ -8,13 +8,13 @@ import mappings from "../../pages/mappings.json";
 import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
+  position: absolute;
+  z-index: 1;
   ${(props) =>
     props.responsive === "mobile" &&
     css`
-      position: absolute;
       top: 50px;
       left: 0;
-      z-index: 1;
     `}
 
   display: flex;
