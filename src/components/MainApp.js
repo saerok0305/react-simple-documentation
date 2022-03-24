@@ -24,6 +24,7 @@ const HeaderContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
+  position: relative;
   display: flex;
   width: 100%;
   height: calc(100% - 50px);
