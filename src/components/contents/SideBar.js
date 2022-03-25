@@ -35,11 +35,11 @@ const Container = styled.div`
   ${(props) =>
     !props.collapsed &&
     css`
-      width: 320px; ///////////////////////////////////////
+      width: 280px; ///////////////////////////////////////
       border-right: 1px solid ${defaultStyle.color0};
       background-color: white;
     `}
-  transition: width 0.2s ease-out;
+  transition: width 0.1s ease-out;
 
   overflow-y: overlay;
   /* width */
@@ -122,6 +122,8 @@ const SideBarSubItem = styled.div`
     css`
       background-color: black;
     `}
+  font-size: 0.8rem;
+
 `;
 
 const ExtendButton = styled.div`
