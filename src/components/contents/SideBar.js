@@ -8,15 +8,18 @@ import mappings from "../../pages/mappings.json";
 import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
-  background-color: white;
-  ${(props) =>
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  /* ${(props) =>
     props.responsive === "mobile" &&
     css`
       position: absolute;
       z-index: 1;
       top: 0;
       left: 0;
-    `}
+    `} */
 
   display: flex;
   flex-direction: column;
