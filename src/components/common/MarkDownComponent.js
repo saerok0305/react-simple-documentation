@@ -10,6 +10,7 @@ import rehypeKatex from "rehype-katex";
 import ReactMarkdown from "react-markdown";
 
 import "katex/dist/katex.min.css";
+import RouterLink from "./RouterLink";
 
 const MarkDownContainer = styled.div`
   display: flex;
@@ -17,11 +18,9 @@ const MarkDownContainer = styled.div`
   padding: 0 20px;
   width: 100%;
   max-width: 800px;
-  /* width: 800px; */
-  /* white-space: nowrap; */
 `;
 
-function MarkDownComponent({ file, meta }) {
+function MarkDownComponent({ file, meta, setLink }) {
   const [markdown, setMarkdown] = useState(null);
   useEffect(() => {
     return () => {
@@ -43,6 +42,13 @@ function MarkDownComponent({ file, meta }) {
             remarkPlugins={[remarkGfm, remarkMath]}
             // escapeHtml={false}
             rehypePlugins={[rehypeRaw, rehypeKatex]}
+            components={{
+              a: (props) => (
+                <RouterLink href={props.href} setLink={setLink}>
+                  {props.children}
+                </RouterLink>
+              ),
+            }}
           >
             {markdown}
           </ReactMarkdown>

@@ -8,7 +8,7 @@ const MyLink = styled(NavLink)`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 30px;
   text-decoration: none;
   color: black;
 

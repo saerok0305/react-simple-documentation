@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import MainApp from "./components/MainApp";
 import { Desktop, Mobile, Tablet } from "./utils/Responsive";
 import MetaTag from "./utils/MetaTag";
+import { useEffect } from "react";
 
 const GlobalStyle = createGlobalStyle`
   * {
